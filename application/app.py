@@ -1,4 +1,17 @@
 import sqlite3
+from flask import Flask
+app = Flask(__name__)
+
+
+@app.route("/")
+def hello():
+    return "Hello World!"
+
+if __name__ == "__main__":
+    app.run()
+
+
+
 
 # DB 생성 (오토 커밋)
 conn = sqlite3.connect("member.db", isolation_level=None)
